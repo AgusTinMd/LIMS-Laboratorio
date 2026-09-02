@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login de personal interno para laboratorio bioquímico LIMS.">
+    <title>LIMS - Login Personal Interno</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="../index.html">
+                <img src="../img/logo1.png" alt="Logo LIMS Laboratorio Bioquímico">
+            </a>
+        </div>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="login-personal.html">Personal Interno</a></li>
+                <li><a href="portal-paciente.html">Portal del Paciente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <i class="fa-solid fa-user-shield login-icon"></i>
+                <h2>Acceso Personal Interno</h2>
+                <p>Ingrese sus credenciales de sistema para continuar</p>
+            </div>
+
+            <form class="login-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="usuario">Usuario / Matrícula</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="usuario" name="usuario" placeholder="Ej: bioq_perez" required autocomplete="username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Recordar usuario
+                    </label>
+                    <a href="#" class="forgot-pass">¿Olvidó su contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    <i class="fa-solid fa-right-to-bracket"></i> Ingresar al Sistema
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Laboratorio LIMS</h3>
+                <p>Comprometidos con la excelencia en diagnóstico clínico, innovación tecnológica y trazabilidad digital de muestras.</p>
+            </div>
+            <div class="footer-col" id="contacto">
+                <h3>Contacto y Ubicación</h3>
+                <p><i class="fa-solid fa-location-pin" style="color: var(--accent-cyan); margin-right: 8px;"></i> <strong>Dirección:</strong> Av. Belgrano y Cuyo, Tucumán</p>
+                <p><i class="fa-solid fa-phone" style="color: var(--accent-cyan); margin-right: 8px;"></i> <strong>Teléfono / WhatsApp:</strong> 381-604-1779</p>
+                <p><i class="fa-solid fa-envelope" style="color: var(--accent-cyan); margin-right: 8px;"></i> <strong>Email:</strong> contacto@limslaboratorio.com.ar</p>
+            </div>
+            <div class="footer-col">
+                <h3>Síguenos</h3>
+                <p>Conéctate con nuestras redes oficiales para novedades y asesoramiento.</p>
+                <div class="footer-socials">
+                    <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 - Proyecto Final Integrador LIMS | Bioquímica y Tecnología</p>
+        </div>
+    </footer>
+</body>
+</html>

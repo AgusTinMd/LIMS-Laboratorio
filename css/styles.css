@@ -1,0 +1,520 @@
+:root {
+    --primary-blue: #1c4e80;
+    --accent-cyan: #42b883;
+    --bg-light: #f4f6f9;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --font-main: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1rem 3rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    max-height: 48px;
+    width: auto;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-blue);
+}
+
+.hero-banner {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    background-image: linear-gradient(rgba(15, 32, 67, 0.75), rgba(28, 78, 128, 0.65)), url('../img/hero.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 560px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 4rem 1.5rem 2rem 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.hero-contenido h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    max-width: 900px;
+}
+
+.hero-contenido p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    opacity: 0.95;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin: 0 !important;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.servicios-grid, .ventajas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.tarjeta-servicio, .tarjeta-ventaja {
+    background-color: var(--white);
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-servicio:hover, .tarjeta-ventaja:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px -10px rgba(28, 78, 128, 0.15);
+    border-color: var(--accent-cyan);
+}
+
+.tarjeta-img-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.tarjeta-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.tarjeta-servicio:hover .tarjeta-img-container img,
+.tarjeta-ventaja:hover .tarjeta-img-container img {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+.tarjeta-contenido {
+    padding: 2rem;
+}
+
+.tarjeta-servicio h3, .tarjeta-ventaja h3 {
+    color: var(--primary-blue);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.tarjeta-servicio p, .tarjeta-ventaja p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.seccion-ventajas {
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.seccion-ventajas h2 {
+    color: var(--primary-blue);
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.5px;
+}
+
+.banner-tecnologia {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/asda.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 3.5rem 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.banner-tecnologia p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.3rem;
+    font-weight: 600;
+    max-width: 900px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 4rem 2rem 2rem 2rem;
+    margin-top: 5rem;
+    border-top: 4px solid var(--accent-cyan);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: var(--accent-cyan);
+    letter-spacing: 0.5px;
+}
+
+.footer-col p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+    background: var(--accent-cyan);
+    transform: translateY(-3px);
+}
+
+.footer-socials i {
+    font-size: 1.1rem;
+    color: var(--white);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* diseño responsivo */
+
+@media (max-width: 992px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    header nav ul {
+        gap: 1rem;
+    }
+
+    .hero-banner {
+        min-height: 480px;
+        padding: 3rem 1rem;
+    }
+
+    .hero-contenido h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        position: static;
+    }
+
+    header nav ul {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-banner {
+        min-height: 420px;
+    }
+
+    .hero-contenido h1 {
+        font-size: 2rem;
+    }
+
+    .hero-contenido p {
+        font-size: 1rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .banner-tecnologia {
+        padding: 2rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS LOGIN PERSONAL
+   ========================================================================== */
+
+.login-container {
+    min-height: calc(100vh - 350px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+}
+
+.login-card {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 15px 35px rgba(28, 78, 128, 0.08);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-icon {
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.8rem;
+}
+
+.login-header h2 {
+    color: var(--primary-blue);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.login-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 14px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 0.75rem 0.8rem 0.75rem 2.6rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: var(--font-main);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(28, 78, 128, 0.15);
+}
+
+.input-wrapper input:focus + i,
+.input-wrapper:focus-within i {
+    color: var(--primary-blue);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 1.8rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.forgot-pass {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.forgot-pass:hover {
+    color: var(--accent-cyan);
+    text-decoration: underline;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-main);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: #14385c;
+    transform: translateY(-2px);
+}
