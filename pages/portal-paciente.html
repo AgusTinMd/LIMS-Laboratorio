@@ -4,20 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portal de autogestión de pacientes para laboratorio bioquímico.">
-    <title>LIMS - Laboratorio Bioquímico</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>LIMS - Portal del Paciente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Portal del Paciente</h1>
+    <header class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/logo1.png" alt="Logo LIMS Laboratorio Bioquímico" height="48">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav" aria-label="Menú principal">
+                <ul class="navbar-nav ms-auto gap-lg-4">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="login-personal.html">Personal Interno</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold active" aria-current="page" href="portal-paciente.html">Portal del Paciente</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
 
+    <main class="py-5">
+        <div class="text-center mb-4">
+            <h1 class="h3 text-primary fw-bold mb-2">Portal del Paciente</h1>
+            <p class="text-muted mx-auto" style="max-width: 500px;">Accedé a tus resultados, turnos e historial clínico desde un solo lugar.</p>
+        </div>
 
+        <div class="d-flex justify-content-center">
+            <div class="card shadow-lg border-0 w-100 mx-3" style="max-width: 450px;">
+                <div class="card-body p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-user-nurse text-primary mb-3" style="font-size: 2.8rem;"></i>
+                        <h2 class="h4 text-primary fw-bold">Acceso Portal del Paciente</h2>
+                        <p class="text-muted small mb-0">Ingrese su DNI y contraseña para continuar</p>
+                    </div>
+
+                    <form action="#" method="POST">
+                        <div class="mb-3">
+                            <label for="dni" class="form-label fw-semibold small">DNI</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="fa-solid fa-id-card text-muted"></i></span>
+                                <input type="text" class="form-control" id="dni" name="dni" placeholder="Ej: 30123456" required inputmode="numeric" pattern="[0-9]*" autocomplete="username">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label fw-semibold small">Contraseña</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white"><i class="fa-solid fa-lock text-muted"></i></span>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4 small">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                                <label class="form-check-label text-muted" for="remember">Recordar mi DNI</label>
+                            </div>
+                            <a href="#" class="text-primary fw-semibold text-decoration-none">¿Olvidó su contraseña?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold mb-3">
+                            <i class="fa-solid fa-right-to-bracket me-2"></i>Ingresar
+                        </button>
+
+                        <p class="text-center text-muted small mb-0">¿Primera vez? <a href="#" class="text-primary fw-semibold text-decoration-none">Registrate</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 - Proyecto Final Integrador LIMS</p>
+    <footer class="bg-primary text-white pt-5 pb-3 mt-5 border-top border-4 border-success">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <h3 class="h5 text-success mb-3">Laboratorio LIMS</h3>
+                    <p class="small opacity-75">Comprometidos con la excelencia en diagnóstico clínico, innovación tecnológica y trazabilidad digital de muestras.</p>
+                </div>
+                <div class="col-md-4" id="contacto">
+                    <h3 class="h5 text-success mb-3">Contacto y Ubicación</h3>
+                    <p class="small opacity-75"><i class="fa-solid fa-location-pin text-success me-2"></i><strong>Dirección:</strong> Av. Belgrano y Cuyo, Tucumán</p>
+                    <p class="small opacity-75"><i class="fa-solid fa-phone text-success me-2"></i><strong>Teléfono / WhatsApp:</strong> 381-604-1779</p>
+                    <p class="small opacity-75"><i class="fa-solid fa-envelope text-success me-2"></i><strong>Email:</strong> contacto@limslaboratorio.com.ar</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5 text-success mb-3">Síguenos</h3>
+                    <p class="small opacity-75">Conéctate con nuestras redes oficiales para novedades y asesoramiento.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp" class="d-flex align-items-center justify-content-center rounded-circle bg-white bg-opacity-10 text-white" style="width: 40px; height: 40px;">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="d-flex align-items-center justify-content-center rounded-circle bg-white bg-opacity-10 text-white" style="width: 40px; height: 40px;">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="d-flex align-items-center justify-content-center rounded-circle bg-white bg-opacity-10 text-white" style="width: 40px; height: 40px;">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top border-white border-opacity-25 pt-3 text-center small opacity-75">
+                <p class="mb-0">&copy; 2026 - Proyecto Final Integrador LIMS | Bioquímica y Tecnología</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
