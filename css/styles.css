@@ -1,3 +1,40 @@
+/* Tema de marca LIMS sobre variables CSS de Bootstrap 5.3 */
+:root {
+    --bs-primary: #1c4e80;
+    --bs-primary-rgb: 28, 78, 128;
+    --bs-success: #42b883;
+    --bs-success-rgb: 66, 184, 131;
+    --bs-link-color: var(--bs-primary);
+    --bs-link-hover-color: #14385c;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Imágenes de fondo de marca - sin equivalente en utilidades de Bootstrap */
+.hero-bg {
+    background-image: linear-gradient(rgba(15, 32, 67, 0.75), rgba(28, 78, 128, 0.65)), url('../img/hero.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tech-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/asda.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Panel de vidrio (glassmorphism) de las estadísticas del hero */
+.hero-stats-panel {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ----- Estilos que ya no se usan ya que pasamos a bootstrap 5.3 y sus utilidades, pero los dejamos por pedido de la profe para el TP-----
+
 :root {
     --primary-blue: #1c4e80;
     --accent-cyan: #42b883;
@@ -299,8 +336,12 @@ footer {
     font-size: 0.85rem;
     opacity: 0.8;
 }
+*/
 
-/* diseño responsivo */
+/*-- diseño responsivo -- */
+
+
+/*
 
 @media (max-width: 992px) {
     header {
@@ -375,11 +416,12 @@ footer {
         justify-content: center;
     }
 }
+*/
 
 /* ==========================================================================
    ESTILOS LOGIN PERSONAL
    ========================================================================== */
-
+/*
 .login-container {
     min-height: calc(100vh - 350px);
     display: flex;
@@ -518,3 +560,46 @@ footer {
     background-color: #14385c;
     transform: translateY(-2px);
 }
+
+/* Tema de marca LIMS sobre variables CSS de Bootstrap 5.3 */
+/*
+:root {
+    --bs-primary: #1c4e80;
+    --bs-primary-rgb: 28, 78, 128;
+    --bs-success: #42b883;
+    --bs-success-rgb: 66, 184, 131;
+    --bs-link-color: var(--bs-primary);
+    --bs-link-hover-color: #14385c;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Imágenes de fondo de marca - sin equivalente en utilidades de Bootstrap */
+/*
+.hero-bg {
+    background-image: linear-gradient(rgba(15, 32, 67, 0.75), rgba(28, 78, 128, 0.65)), url('../img/hero.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tech-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/asda.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* Panel de vidrio (glassmorphism) de las estadísticas del hero */
+/*
+.hero-stats-panel {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+*/
