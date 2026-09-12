@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Login de personal interno para laboratorio bioquímico LIMS.">
-    <title>LIMS - Login Personal Interno</title>
+    <meta name="description" content="Portal de autogestión de pacientes para laboratorio bioquímico.">
+    <title>LIMS - Portal del Paciente</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,66 +28,71 @@
                     <li class="nav-item"><a class="nav-link lims-nav-link" href="../index.html#servicios">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link lims-nav-link" href="../index.html#contacto">Contacto</a></li>
                     <li class="nav-item ms-lg-3 ps-lg-3 lims-nav-divider mt-3 mt-lg-0">
-                        <a class="btn btn-sm lims-btn-ghost" aria-current="page" href="login-personal.html">Personal interno</a>
+                        <a class="btn btn-sm lims-btn-ghost" href="login-personal.html">Personal interno</a>
                     </li>
                     <li class="nav-item mt-2 mt-lg-0">
-                        <a class="btn btn-sm lims-btn-accent" href="login-paciente.html"><i class="fa-solid fa-user me-2"></i>Portal del paciente</a>
+                        <a class="btn btn-sm lims-btn-accent" aria-current="page" href="login-paciente.html"><i class="fa-solid fa-user me-2"></i>Portal del paciente</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="d-flex justify-content-center align-items-center py-5" style="min-height: calc(100vh - 350px);">
-        <div class="w-100 mx-3" style="max-width: 450px;">
-            <div class="text-center mb-4">
-                <span class="d-inline-flex align-items-center justify-content-center rounded-3 bg-dark text-success mb-3" style="width: 52px; height: 52px; font-size: 1.3rem;">
-                    <i class="fa-solid fa-user-shield"></i>
+    <main class="py-5 d-flex justify-content-center px-3">
+        <div class="row g-0 shadow-lg rounded-4 overflow-hidden w-100" style="max-width: 860px;">
+
+            <div class="col-md-5 patient-login-bg text-white p-4 p-md-5 d-flex flex-column">
+                <img src="../img/logo1.png" alt="LIMS" height="30" class="mb-auto align-self-start" style="filter: brightness(0) invert(1); width: auto;">
+                <h2 class="fw-bold mt-4 mb-3">Sus resultados, cuando los necesite</h2>
+                <p class="mb-4" style="color: rgba(255,255,255,.85);">Consulte informes validados, el estado de sus muestras y sus turnos desde un solo lugar.</p>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-success"></i><span class="small">Informes con firma electrónica</span></li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-success"></i><span class="small">Estado de la muestra en tiempo real</span></li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-success"></i><span class="small">Historial completo descargable</span></li>
+                </ul>
+            </div>
+
+            <div class="col-md-7 bg-white p-4 p-md-5 d-flex flex-column justify-content-center">
+                <span class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill mb-3 small fw-semibold text-uppercase align-self-start" style="background: #e8eef6; color: #1c4e80; letter-spacing: .05em;">
+                    <i class="fa-solid fa-user"></i>Portal del paciente
                 </span>
-                <h2 class="h4 text-primary fw-bold">Acceso Personal Interno</h2>
-                <p class="text-muted small mb-0">Ingrese sus credenciales de sistema para continuar</p>
+                <h1 class="h3 fw-bold text-dark mb-2">Ingrese a su cuenta</h1>
+                <p class="text-muted mb-4">Use su DNI y la contraseña que definió al registrarse.</p>
+
+                <form action="#" method="POST">
+                    <div class="mb-3">
+                        <label for="dni" class="form-label fw-semibold small">DNI</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fa-solid fa-id-card text-muted"></i></span>
+                            <input type="text" class="form-control" id="dni" name="dni" placeholder="Ej: 30123456" required inputmode="numeric" pattern="[0-9]*" autocomplete="username">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label fw-semibold small">Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fa-solid fa-lock text-muted"></i></span>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                            <span class="input-group-text bg-white"><i class="fa-regular fa-eye text-muted"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-4 small">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                            <label class="form-check-label text-muted" for="remember">Recordar mi DNI</label>
+                        </div>
+                        <a href="#" class="text-primary fw-semibold text-decoration-none">¿Olvidó su contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold mb-3">
+                        <i class="fa-solid fa-right-to-bracket me-2"></i>Ingresar
+                    </button>
+
+                    <p class="text-center text-muted small mb-0">¿Primera vez? <a href="#" class="text-primary fw-semibold text-decoration-none">Regístrese con su DNI</a></p>
+                </form>
             </div>
 
-            <div class="card shadow-lg border-0">
-                <div class="card-body p-4 p-md-5">
-                    <form action="#" method="POST">
-                        <div class="mb-3">
-                            <label for="usuario" class="form-label fw-semibold small">Usuario / Matrícula</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-white"><i class="fa-solid fa-user text-muted"></i></span>
-                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ej: bioq_perez" required autocomplete="username">
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="password" class="form-label fw-semibold small">Contraseña</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-white"><i class="fa-solid fa-lock text-muted"></i></span>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center mb-4 small">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember">
-                                <label class="form-check-label text-muted" for="remember">Recordar usuario</label>
-                            </div>
-                            <a href="#" class="text-primary fw-semibold text-decoration-none">¿Olvidó su contraseña?</a>
-                        </div>
-
-                        <button type="submit" class="btn btn-dark w-100 py-2 fw-semibold">
-                            <i class="fa-solid fa-right-to-bracket me-2"></i>Ingresar al Sistema
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="d-flex gap-2 mt-3 p-3 rounded-3 bg-light">
-                <i class="fa-solid fa-shield-halved text-primary mt-1"></i>
-                <p class="mb-0 small text-muted">Todos los accesos y las validaciones de resultados quedan registrados con usuario, fecha y hora.</p>
-            </div>
-
-            <p class="text-center text-muted small mt-3 mb-0">¿Es paciente? <a href="login-paciente.html" class="text-primary fw-semibold text-decoration-none">Vaya al portal del paciente</a></p>
         </div>
     </main>
 
