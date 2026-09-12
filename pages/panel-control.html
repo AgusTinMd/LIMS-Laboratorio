@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de control interno para bioquímicos del laboratorio LIMS.">
+    <title>LIMS - Panel de control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="lims-dash-shell">
+        <aside class="lims-dash-sidebar">
+            <span class="lims-dash-logo">L</span>
+            <a href="panel-control.html" title="Panel" aria-label="Panel" aria-current="page" class="lims-dash-nav-icon active">
+                <i class="fa-solid fa-gauge-high"></i>
+            </a>
+            <a href="#" title="Muestras (próximamente)" aria-label="Muestras" aria-disabled="true" class="lims-dash-nav-icon">
+                <i class="fa-solid fa-vial"></i>
+            </a>
+            <a href="#" title="Resultados (próximamente)" aria-label="Resultados" aria-disabled="true" class="lims-dash-nav-icon">
+                <i class="fa-solid fa-file-waveform"></i>
+            </a>
+            <a href="#" title="Recepción (próximamente)" aria-label="Recepción" aria-disabled="true" class="lims-dash-nav-icon">
+                <i class="fa-solid fa-clipboard-list"></i>
+            </a>
+            <a href="#" title="Calidad (próximamente)" aria-label="Calidad" aria-disabled="true" class="lims-dash-nav-icon">
+                <i class="fa-solid fa-flask-vial"></i>
+            </a>
+            <span class="lims-dash-spacer"></span>
+            <span class="lims-dash-avatar" title="Bioq. L. Ain Serrano">LA</span>
+        </aside>
+
+        <div class="lims-dash-main">
+            <header class="lims-dash-topbar">
+                <div class="d-flex align-items-center gap-3">
+                    <span class="lims-dash-topbar-title">Panel de control</span>
+                    <span class="lims-dash-topbar-date">jue 10/09/2026 · 14:26</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="lims-dash-topbar-user">Bioq. L. Ain Serrano · MP 4821</span>
+                    <a href="#" class="lims-dash-topbar-bell" title="Notificaciones" aria-label="Notificaciones">
+                        <i class="fa-regular fa-bell"></i>
+                    </a>
+                </div>
+            </header>
+
+            <main class="lims-dash-content">
+                <div class="lims-dash-placeholder">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <p>Esta es la estructura base del panel: barra superior y navegación lateral. La cola de validación, las estadísticas y las alertas se van a incorporar en los próximos Pull Requests.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
