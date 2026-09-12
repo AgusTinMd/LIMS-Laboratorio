@@ -378,6 +378,89 @@ html::-webkit-scrollbar {
     .lims-hero-lead { max-width: none; }
 }
 
+/* ---------- Panel interno (bioquímico) ---------- */
+
+.lims-dash-shell { display: flex; min-height: 100vh; background: var(--lims-surface); }
+
+.lims-dash-sidebar {
+    width: 54px;
+    flex: none;
+    background: var(--lims-navy-900);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0;
+    gap: 3px;
+}
+.lims-dash-logo {
+    font: 700 12px/1 "IBM Plex Sans", sans-serif;
+    letter-spacing: .05em;
+    color: #42b883;
+    margin-bottom: 12px;
+}
+.lims-dash-nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, .45);
+    font-size: 13px;
+    text-decoration: none;
+    transition: background-color .15s ease, color .15s ease;
+}
+.lims-dash-nav-icon:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.lims-dash-nav-icon.active { background: var(--bs-primary); color: #fff; }
+.lims-dash-spacer { flex: 1; }
+.lims-dash-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background: #42b883;
+    color: var(--lims-navy-900);
+    font: 700 10px/1 "IBM Plex Sans", sans-serif;
+}
+
+.lims-dash-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+
+.lims-dash-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 18px;
+    height: 46px;
+    background: var(--lims-navy-800);
+    flex: none;
+}
+.lims-dash-topbar-title { font: 600 13.5px/1 "IBM Plex Sans", sans-serif; color: #fff; }
+.lims-dash-topbar-date { font-family: var(--lims-font-mono); font-size: 11.5px; color: rgba(255, 255, 255, .55); }
+.lims-dash-topbar-user { font: 400 12px "IBM Plex Sans", sans-serif; color: rgba(255, 255, 255, .7); }
+.lims-dash-topbar-bell { color: rgba(255, 255, 255, .7); font-size: 13px; text-decoration: none; }
+.lims-dash-topbar-bell:hover { color: #fff; }
+
+.lims-dash-content { flex: 1; padding: 16px 18px; }
+.lims-dash-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1.5px dashed var(--lims-border);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--lims-muted-2);
+    text-align: center;
+    padding: 40px 20px;
+}
+.lims-dash-placeholder i { font-size: 26px; }
+.lims-dash-placeholder p { max-width: 420px; font-size: 13px; line-height: 1.6; margin: 0; }
+
 /* ----- Estilos que ya no se usan ya que pasamos a bootstrap 5.3 y sus utilidades, pero los dejamos por pedido de la profe para el TP-----
 
 :root {
