@@ -5,128 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sistema Integral LIMS - Laboratorio Bioquímico de Análisis Clínicos y Autogestión de resultados.">
     <title>LIMS - Laboratorio Bioquímico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="./img/logo1.png" alt="Logo LIMS Laboratorio Bioquímico" height="48">
+    <header class="navbar navbar-expand-lg navbar-dark lims-navbar sticky-top py-0">
+        <div class="container-fluid px-3 px-lg-4">
+            <a class="navbar-brand d-flex align-items-center gap-3 py-0" href="index.html">
+                <img src="./img/logo1.png" alt="Logo LIMS Laboratorio Bioquímico" height="26" class="lims-logo-invert">
+                <span class="lims-eyebrow lims-chip-brand d-none d-md-inline-block">Laboratorio bioquímico</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+            <button class="navbar-toggler border-0 py-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <nav class="collapse navbar-collapse" id="navbarNav" aria-label="Menú principal">
-                <ul class="navbar-nav ms-auto gap-lg-4">
-                    <li class="nav-item"><a class="nav-link fw-semibold active" aria-current="page" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link fw-semibold" href="./pages/login-personal.html">Personal Interno</a></li>
-                    <li class="nav-item"><a class="nav-link fw-semibold" href="./pages/portal-paciente.html">Portal del Paciente</a></li>
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 py-3 py-lg-0">
+                    <li class="nav-item"><a class="nav-link lims-nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link lims-nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link lims-nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item ms-lg-3 ps-lg-3 lims-nav-divider mt-3 mt-lg-0">
+                        <a class="btn btn-sm lims-btn-ghost" href="./pages/login-personal.html">Personal interno</a>
+                    </li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-sm lims-btn-accent" href="./pages/login-paciente.html"><i class="fa-solid fa-user me-2"></i>Portal del paciente</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero-bg d-flex flex-column justify-content-center align-items-center text-center text-white py-5 mb-5">
-        <div class="container py-4">
-            <h1 class="display-4 fw-bold mb-3" style="text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);">Autogestión de Análisis Clínicos y Resultados de Laboratorio</h1>
-            <p class="fs-5 mx-auto mb-5" style="max-width: 750px; text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);">Brindamos soluciones integrales en analítica clínica y trazabilidad de muestras para profesionales y pacientes.</p>
+    <section class="lims-hero">
+        <div class="row g-0">
+            <div class="col-lg-7 lims-hero-copy">
+                <span class="lims-eyebrow lims-chip-accent d-inline-flex align-items-center gap-2 mb-3">
+                    <i class="fa-solid fa-flask-vial"></i>Trazabilidad digital de muestras
+                </span>
+                <h1 class="lims-hero-title mb-3">Autogestión de análisis clínicos y resultados de laboratorio</h1>
+                <p class="lims-hero-lead mb-4">Soluciones integrales en analítica clínica para profesionales y pacientes. Cada tubo identificado con código de barras y su estado visible de punta a punta.</p>
 
-            <div class="hero-stats-panel row row-cols-2 row-cols-md-4 g-4 mx-auto rounded-4 p-4 shadow" style="max-width: 900px;">
-                <div class="col">
-                    <h3 class="fw-bold display-6 mb-1">20+</h3>
-                    <p class="small mb-0">Años de experiencia</p>
+                <div class="d-flex flex-wrap gap-2 mb-4 pb-2">
+                    <a href="./pages/login-paciente.html" class="btn lims-btn-accent">
+                        <i class="fa-solid fa-file-waveform me-2"></i>Ver mis resultados
+                    </a>
+                    <a href="#contacto" class="btn lims-btn-ghost">
+                        <i class="fa-regular fa-calendar-plus me-2"></i>Pedir un turno
+                    </a>
                 </div>
-                <div class="col">
-                    <h3 class="fw-bold display-6 mb-1">95%</h3>
-                    <p class="small mb-0">Satisfacción de pacientes</p>
-                </div>
-                <div class="col">
-                    <h3 class="fw-bold display-6 mb-1">5000+</h3>
-                    <p class="small mb-0">Análisis mensuales</p>
-                </div>
-                <div class="col">
-                    <h3 class="fw-bold display-6 mb-1">150+</h3>
-                    <p class="small mb-0">Centros asociados</p>
+
+                <div class="lims-stats row row-cols-2 row-cols-md-4 g-0">
+                    <div class="col">
+                        <div class="lims-stat">
+                            <div class="lims-stat-value">20+</div>
+                            <div class="lims-stat-label">Años de<br>experiencia</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="lims-stat">
+                            <div class="lims-stat-value">95%</div>
+                            <div class="lims-stat-label">Satisfacción de<br>pacientes</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="lims-stat">
+                            <div class="lims-stat-value">5000+</div>
+                            <div class="lims-stat-label">Análisis<br>mensuales</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="lims-stat">
+                            <div class="lims-stat-value">150+</div>
+                            <div class="lims-stat-label">Centros<br>asociados</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="col-lg-5 lims-hero-media d-none d-lg-block"></div>
         </div>
     </section>
 
-    <main class="container mb-5">
-        <section class="text-center my-5">
-            <h2 class="text-primary fw-bold display-6 mb-4">¿Por qué LIMS Laboratorio?</h2>
-            <div class="tech-bg text-white rounded-4 p-4 p-md-5 shadow">
-                <p class="fs-5 fw-semibold mb-0 mx-auto" style="max-width: 900px; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">
-                    <i class="fa-solid fa-flask-vial text-success me-2"></i>
-                    Las extracciones las realizamos con tecnología de trazabilidad digital avanzada que permite la visualización y gestión rápida, segura y exitosa.
-                </p>
-            </div>
-        </section>
+    <main class="lims-surface py-4 py-lg-5">
+        <div class="container-fluid px-3 px-lg-4">
 
-        <section class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="./img/analisis-sangre.jpg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Área de Extracción y toma de muestras">
-                    <div class="card-body">
-                        <h3 class="card-title h5 text-primary"><i class="fa-solid fa-vial text-success me-2"></i>Área de Extracción</h3>
-                        <p class="card-text text-muted">Protocolos seguros para la toma de muestras ambulatorias y pediátricas bajo estrictas normas de bioseguridad.</p>
+            <section id="servicios" class="mb-5">
+                <div class="d-flex align-items-baseline justify-content-between gap-3 mb-3">
+                    <h2 class="lims-h2 mb-0">Servicios</h2>
+                    <span class="lims-meta d-none d-sm-inline">tres áreas · un solo sistema</span>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-2">
+                    <div class="col">
+                        <article class="card lims-card lims-card--blue h-100">
+                            <img src="./img/analisis-sangre.jpg" class="lims-card-img" alt="Área de extracción y toma de muestras">
+                            <div class="card-body">
+                                <h3 class="lims-card-title"><i class="fa-solid fa-vial text-primary me-2"></i>Área de extracción</h3>
+                                <p class="lims-card-text mb-0">Protocolos seguros para toma de muestras ambulatorias y pediátricas bajo estrictas normas de bioseguridad.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article class="card lims-card lims-card--green h-100">
+                            <img src="./img/analisis-clinicos.jpg" class="lims-card-img" alt="Control de calidad en análisis clínicos">
+                            <div class="card-body">
+                                <h3 class="lims-card-title"><i class="fa-solid fa-flask lims-text-success me-2"></i>Control de calidad</h3>
+                                <p class="lims-card-text mb-0">Validación automatizada de estándares analíticos y reactivos mediante nuestro sistema integrado LIMS.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article class="card lims-card lims-card--blue h-100">
+                            <img src="./img/1085095.jpeg" class="lims-card-img" alt="Portal de resultados digitales de laboratorio">
+                            <div class="card-body">
+                                <h3 class="lims-card-title"><i class="fa-solid fa-microscope text-primary me-2"></i>Portal de resultados</h3>
+                                <p class="lims-card-text mb-0">Acceso digital inmediato a informes validados con firma electrónica para médicos y pacientes.</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="./img/analisis-clinicos.jpg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Control de Calidad en análisis clínicos">
-                    <div class="card-body">
-                        <h3 class="card-title h5 text-primary"><i class="fa-solid fa-flask text-success me-2"></i>Control de Calidad</h3>
-                        <p class="card-text text-muted">Validación automatizada de estándares analíticos y reactivos mediante nuestro sistema integrado LIMS.</p>
-                    </div>
+            </section>
+
+            <section class="row g-0 align-items-stretch lims-split mb-5">
+                <div class="col-lg-6 bg-white p-4">
+                    <h2 class="lims-h2 mb-3">¿Por qué LIMS Laboratorio?</h2>
+                    <p class="lims-body mb-3">Las extracciones se realizan con tecnología de trazabilidad digital avanzada. El estado de cada muestra se registra con usuario, fecha y hora.</p>
+                    <ul class="list-unstyled lims-rows mb-0">
+                        <li><i class="fa-solid fa-circle-check lims-text-success"></i><span>Informes firmados electrónicamente por bioquímico matriculado</span></li>
+                        <li><i class="fa-solid fa-circle-check lims-text-success"></i><span>Estado de la muestra en tiempo real, sin llamar al laboratorio</span></li>
+                        <li><i class="fa-solid fa-circle-check lims-text-success"></i><span>Historial clínico completo disponible para su médico tratante</span></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="./img/1085095.jpeg" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Portal de Resultados digitales de laboratorio">
-                    <div class="card-body">
-                        <h3 class="card-title h5 text-primary"><i class="fa-solid fa-microscope text-success me-2"></i>Portal de Resultados</h3>
-                        <p class="card-text text-muted">Acceso digital inmediato a informes de laboratorio validados con firma electrónica para médicos y pacientes.</p>
-                    </div>
+                <div class="col-lg-6 tech-bg lims-split-media"></div>
+            </section>
+
+            <section class="row row-cols-1 row-cols-md-2 g-2">
+                <div class="col">
+                    <a href="./pages/login-paciente.html" class="lims-access lims-access--patient h-100">
+                        <span class="lims-access-icon"><i class="fa-solid fa-user"></i></span>
+                        <span class="flex-grow-1">
+                            <span class="d-block lims-access-title">Soy paciente</span>
+                            <span class="d-block lims-access-sub">Ingrese con su DNI para ver resultados y turnos</span>
+                        </span>
+                        <i class="fa-solid fa-arrow-right text-primary"></i>
+                    </a>
                 </div>
-            </div>
-        </section>
+                <div class="col">
+                    <a href="./pages/login-personal.html" class="lims-access lims-access--staff h-100">
+                        <span class="lims-access-icon"><i class="fa-solid fa-user-shield"></i></span>
+                        <span class="flex-grow-1">
+                            <span class="d-block lims-access-title">Soy del personal</span>
+                            <span class="d-block lims-access-sub">Acceso al sistema de gestión de muestras</span>
+                        </span>
+                        <i class="fa-solid fa-arrow-right lims-text-accent"></i>
+                    </a>
+                </div>
+            </section>
+
+        </div>
     </main>
 
-    <footer class="bg-primary text-white pt-5 pb-3 mt-5 border-top border-4 border-success">
-        <div class="container">
-            <div class="row g-4 mb-4">
+    <footer class="lims-footer pt-4 pb-3">
+        <div class="container-fluid px-3 px-lg-4">
+            <div class="row g-4 pb-4">
                 <div class="col-md-4">
-                    <h3 class="h5 text-success mb-3">Laboratorio LIMS</h3>
-                    <p class="small opacity-75">Comprometidos con la excelencia en diagnóstico clínico, innovación tecnológica y trazabilidad digital de muestras.</p>
+                    <h3 class="lims-eyebrow lims-text-accent mb-3">Laboratorio LIMS</h3>
+                    <p class="lims-footer-text mb-0">Comprometidos con la excelencia en diagnóstico clínico, innovación tecnológica y trazabilidad digital de muestras.</p>
                 </div>
                 <div class="col-md-4" id="contacto">
-                    <h3 class="h5 text-success mb-3">Contacto y Ubicación</h3>
-                    <p class="small opacity-75"><i class="fa-solid fa-location-pin text-success me-2"></i><strong>Dirección:</strong> Av. Belgrano y Cuyo, Tucumán</p>
-                    <p class="small opacity-75"><i class="fa-solid fa-phone text-success me-2"></i><strong>Teléfono / WhatsApp:</strong> 381-604-1779</p>
-                    <p class="small opacity-75"><i class="fa-solid fa-envelope text-success me-2"></i><strong>Email:</strong> contacto@limslaboratorio.com.ar</p>
+                    <h3 class="lims-eyebrow lims-text-accent mb-3">Contacto y ubicación</h3>
+                    <p class="lims-footer-item"><i class="fa-solid fa-location-pin lims-text-accent me-2"></i>Av. Belgrano y Cuyo, Tucumán</p>
+                    <p class="lims-footer-item lims-mono"><i class="fa-solid fa-phone lims-text-accent me-2"></i>381-604-1779</p>
+                    <p class="lims-footer-item lims-mono mb-0"><i class="fa-solid fa-envelope lims-text-accent me-2"></i>contacto@limslaboratorio.com.ar</p>
                 </div>
                 <div class="col-md-4">
-                    <h3 class="h5 text-success mb-3">Síguenos</h3>
-                    <p class="small opacity-75">Conéctate con nuestras redes oficiales para novedades y asesoramiento.</p>
-                    <div class="d-flex gap-3 mt-3">
-                        <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp" class="d-flex align-items-center justify-content-center rounded-circle bg-white bg-opacity-10 text-white" style="width: 40px; height: 40px;">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="d-flex align-items-center justify-content-center rounded-circle bg-white bg-opacity-10 text-white" style="width: 40px; height: 40px;">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="d-flex align-items-center justify-content-center rounded-circle bg-white bg-opacity-10 text-white" style="width: 40px; height: 40px;">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
+                    <h3 class="lims-eyebrow lims-text-accent mb-3">Síguenos</h3>
+                    <p class="lims-footer-text mb-3">Novedades y asesoramiento en nuestras redes oficiales.</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://whatsapp.com" target="_blank" rel="noopener" aria-label="WhatsApp" class="lims-social"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="lims-social"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="lims-social"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-top border-white border-opacity-25 pt-3 text-center small opacity-75">
-                <p class="mb-0">&copy; 2026 - Proyecto Final Integrador LIMS | Bioquímica y Tecnología</p>
+            <div class="lims-footer-bottom pt-3 text-center">
+                <p class="mb-0">&copy; 2026 — Proyecto Final Integrador LIMS · Bioquímica y Tecnología</p>
             </div>
         </div>
     </footer>

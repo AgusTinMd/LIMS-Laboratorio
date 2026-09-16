@@ -1,36 +1,381 @@
-/* Tema de marca LIMS sobre variables CSS de Bootstrap 5.3 */
+/* ============================================================
+   LIMS — Estilo denso / técnico, sobre variables CSS de Bootstrap 5.3
+   ============================================================ */
+
 :root {
+    /* Marca */
     --bs-primary: #1c4e80;
     --bs-primary-rgb: 28, 78, 128;
     --bs-success: #42b883;
     --bs-success-rgb: 66, 184, 131;
+    --bs-dark: #0f2043;
+    --bs-dark-rgb: 15, 32, 67;
     --bs-link-color: var(--bs-primary);
     --bs-link-hover-color: #14385c;
+
+    /* Superficies navy */
+    --lims-navy-900: #0a1730;
+    --lims-navy-800: #0f2043;
+    --lims-primary-hover: #14385c;
+
+    /* Texto */
+    --lims-ink: #1e293b;
+    --lims-muted: #5b6472;
+    --lims-muted-2: #6b7684;
+
+    /* Bordes y superficies claras */
+    --lims-border: #d8dee7;
+    --lims-border-soft: #eef1f5;
+    --lims-surface: #f1f3f6;
+    --lims-surface-2: #f6f8fa;
+
+    /* Estados */
+    --lims-success-bg: #e3f2ea;
+    --lims-success-fg: #1c6b4a;
+    --lims-warn-bg: #fdf0d6;
+    --lims-warn-fg: #7a5a0c;
+    --lims-danger: #a83c16;
+    --lims-danger-bg: #fdf0e8;
+    --lims-danger-fg: #7a2e10;
+    --lims-info-bg: #eef4fa;
+    --lims-info-fg: #123c66;
+
+    /* Tipografía */
+    --lims-font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+    /* Densidad: baja los defaults aireados de Bootstrap */
+    --bs-border-radius: 6px;
+    --bs-border-radius-sm: 5px;
+    --bs-border-radius-lg: 6px;
+    --bs-border-color: var(--lims-border);
+    --bs-body-color: var(--lims-ink);
+}
+
+body {
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    color: var(--lims-ink);
 }
 
 html::-webkit-scrollbar {
     display: none;
 }
 
-/* Imágenes de fondo de marca - sin equivalente en utilidades de Bootstrap */
-.hero-bg {
-    background-image: linear-gradient(rgba(15, 32, 67, 0.75), rgba(28, 78, 128, 0.65)), url('../img/hero.jpeg');
+/* ---------- Utilidades reutilizables (base del sistema interno) ---------- */
+
+.lims-mono { font-family: var(--lims-font-mono); }
+.lims-text-accent { color: #42b883 !important; }
+.lims-text-success { color: var(--lims-success-fg) !important; }
+.lims-surface { background: var(--lims-surface); }
+
+.lims-eyebrow {
+    font-family: var(--lims-font-mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.lims-meta {
+    font-family: var(--lims-font-mono);
+    font-size: 11px;
+    color: var(--lims-muted-2);
+}
+
+.lims-chip-accent {
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(66, 184, 131, .16);
+    border: 1px solid rgba(66, 184, 131, .42);
+    color: #8fe0bb;
+}
+
+.lims-chip-brand {
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(66, 184, 131, .18);
+    color: #42b883;
+}
+
+/* Chips de estado — se usan en listado de muestras, resultados y calidad */
+.lims-chip {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-family: var(--lims-font-mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+.lims-chip--ok      { background: var(--lims-success-bg); color: var(--lims-success-fg); }
+.lims-chip--warn    { background: var(--lims-warn-bg);    color: var(--lims-warn-fg); }
+.lims-chip--danger  { background: var(--lims-danger);     color: #fff; }
+.lims-chip--neutral { background: #eceae5;                color: #5b5750; }
+
+/* Aviso con acento lateral */
+.lims-notice {
+    display: flex;
+    gap: 9px;
+    padding: 11px 13px;
+    border-radius: 5px;
+    border-left: 3px solid;
+    font-size: 11.5px;
+    line-height: 1.5;
+}
+.lims-notice--info   { background: var(--lims-info-bg);   border-color: var(--bs-primary);  color: var(--lims-info-fg); }
+.lims-notice--warn   { background: var(--lims-warn-bg);   border-color: #e0a72e;            color: #5c4308; }
+.lims-notice--danger { background: var(--lims-danger-bg); border-color: var(--lims-danger); color: var(--lims-danger-fg); }
+
+/* ---------- Botones ---------- */
+
+.btn { border-radius: 5px; font-weight: 700; transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+.btn-primary { --bs-btn-hover-bg: var(--lims-primary-hover); --bs-btn-hover-border-color: var(--lims-primary-hover); }
+
+.lims-btn-accent {
+    background: #42b883;
+    color: var(--lims-navy-900);
+    border: none;
+    padding: 11px 18px;
+    font-size: 13px;
+}
+.lims-btn-accent:hover,
+.lims-btn-accent:focus { background: #37a473; color: var(--lims-navy-900); }
+.btn-sm.lims-btn-accent { padding: 7px 13px; font-size: 11.5px; }
+
+.lims-btn-ghost {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .3);
+    padding: 11px 18px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.lims-btn-ghost:hover,
+.lims-btn-ghost:focus { background: rgba(255, 255, 255, .1); color: #fff; border-color: rgba(255, 255, 255, .45); }
+.btn-sm.lims-btn-ghost { padding: 7px 12px; font-size: 11.5px; }
+
+/* ---------- Navbar ---------- */
+
+.lims-navbar { background: var(--lims-navy-900); min-height: 54px; }
+.lims-logo-invert { filter: brightness(0) invert(1); }
+
+.lims-nav-link {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, .62);
+    padding: .35rem 0;
+    border-bottom: 2px solid transparent;
+}
+.lims-nav-link:hover,
+.lims-nav-link:focus { color: #fff; }
+.lims-nav-link.active { color: #fff; font-weight: 600; border-bottom-color: #42b883; }
+
+.lims-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (min-width: 992px) {
+    .lims-nav-divider { border-left: 1px solid rgba(255, 255, 255, .18); }
+}
+
+/* ---------- Hero ---------- */
+
+.lims-hero { background: var(--lims-navy-800); }
+.lims-hero-copy { padding: 44px 30px 40px 24px; }
+
+.lims-hero-title {
+    font-size: clamp(1.6rem, 3.2vw, 34px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -.5px;
+    color: #fff;
+    text-wrap: pretty;
+}
+
+.lims-hero-lead {
+    max-width: 480px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, .72);
+    text-wrap: pretty;
+}
+
+.lims-hero-media {
+    background-image: linear-gradient(rgba(15, 32, 67, .34), rgba(15, 32, 67, .34)), url('../img/hero.jpeg');
     background-size: cover;
     background-position: center;
+    min-height: 340px;
 }
+
+/* Estadísticas: el gap de 1px sobre fondo claro genera las divisiones.
+   Grid en vez del row-cols de Bootstrap: sumar "gap" a un ancho en % ya
+   repartido (flex-basis 25%) desborda la fila y hace saltar la última
+   celda a una segunda línea; con grid el gap se descuenta del track. */
+.lims-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: rgba(255, 255, 255, .14);
+    border: 1px solid rgba(255, 255, 255, .14);
+    gap: 1px;
+}
+@media (min-width: 768px) {
+    .lims-stats { grid-template-columns: repeat(4, 1fr); }
+}
+/* Neutraliza el width:% que Bootstrap aplica via row-cols (pensado para
+   flex) — dentro de un grid ya repartido, el hijo debe llenar su celda */
+.lims-stats > .col { width: 100%; }
+.lims-stat { background: var(--lims-navy-800); padding: 13px 14px; height: 100%; }
+.lims-stat-value { font-size: 22px; font-weight: 700; line-height: 1; color: #fff; margin-bottom: 5px; }
+.lims-stat-label {
+    font-family: var(--lims-font-mono);
+    font-size: 10px;
+    line-height: 1.35;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .62);
+}
+
+/* ---------- Tipografía de contenido ---------- */
+
+.lims-h2 {
+    font-size: clamp(1.05rem, 2vw, 20px);
+    font-weight: 700;
+    letter-spacing: -.2px;
+    color: var(--lims-navy-800);
+}
+
+.lims-body { font-size: 13.5px; line-height: 1.6; color: var(--lims-muted); text-wrap: pretty; }
+
+/* ---------- Tarjetas de servicio ---------- */
+
+.lims-card { border: 1px solid var(--lims-border); border-radius: 6px; overflow: hidden; box-shadow: none; }
+.lims-card--blue  { border-top: 3px solid var(--bs-primary); }
+.lims-card--green { border-top: 3px solid #42b883; }
+.lims-card .card-body { padding: 15px 16px; }
+.lims-card-img { width: 100%; height: 132px; object-fit: cover; display: block; }
+.lims-card-title { font-size: 14.5px; font-weight: 700; line-height: 1.2; color: var(--lims-navy-800); margin-bottom: 7px; }
+.lims-card-text { font-size: 12.5px; line-height: 1.55; color: var(--lims-muted); text-wrap: pretty; }
+
+/* ---------- Bloque partido ---------- */
+
+.lims-split { background: #fff; border: 1px solid var(--lims-border); border-radius: 6px; overflow: hidden; }
+.lims-split-media { min-height: 250px; }
+
+/* Lista de beneficios como filas divididas, no bullets */
+.lims-rows { border-top: 1px solid var(--lims-border-soft); }
+.lims-rows li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--lims-border-soft);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--lims-ink);
+}
+.lims-rows li i { font-size: 12px; flex: none; }
+
+/* ---------- Accesos duales ---------- */
+
+.lims-access {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid var(--lims-border);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color .15s ease;
+}
+.lims-access-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 16px;
+    flex: none;
+}
+.lims-access-title { font-size: 14.5px; font-weight: 700; margin-bottom: 3px; }
+.lims-access-sub { font-size: 12px; line-height: 1.45; }
+
+.lims-access--patient { background: #fff; border-left: 3px solid var(--bs-primary); }
+.lims-access--patient:hover { background: var(--lims-surface-2); }
+.lims-access--patient .lims-access-icon { background: var(--lims-info-bg); color: var(--bs-primary); }
+.lims-access--patient .lims-access-title { color: var(--lims-navy-800); }
+.lims-access--patient .lims-access-sub { color: var(--lims-muted); }
+
+.lims-access--staff { background: var(--lims-navy-800); border-color: var(--lims-navy-800); border-left: 3px solid #42b883; }
+.lims-access--staff:hover { background: #14294f; }
+.lims-access--staff .lims-access-icon { background: rgba(66, 184, 131, .18); color: #42b883; }
+.lims-access--staff .lims-access-title { color: #fff; }
+.lims-access--staff .lims-access-sub { color: rgba(255, 255, 255, .7); }
+
+/* ---------- Footer ---------- */
+
+.lims-footer { background: var(--lims-navy-900); border-top: 3px solid #42b883; color: #fff; }
+.lims-footer-text { font-size: 12.5px; line-height: 1.6; color: rgba(255, 255, 255, .68); text-wrap: pretty; }
+.lims-footer-item { font-size: 12.5px; line-height: 1.5; color: rgba(255, 255, 255, .82); margin-bottom: 7px; }
+.lims-footer-item i { font-size: 11px; }
+
+.lims-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color .15s ease, color .15s ease;
+}
+.lims-social:hover { background: #42b883; color: var(--lims-navy-900); }
+
+.lims-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    font-family: var(--lims-font-mono);
+    font-size: 11px;
+    color: rgba(255, 255, 255, .55);
+}
+
+/* ---------- Formularios (para los logins) ---------- */
+
+.form-control, .form-select {
+    border-radius: 5px;
+    padding: 9px 11px;
+    font-size: .875rem;
+    border-color: var(--lims-border);
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--bs-primary);
+    border-width: 1.5px;
+    box-shadow: 0 0 0 2px rgba(28, 78, 128, .14);
+}
+.form-label { font-size: 11px; font-weight: 600; color: var(--lims-ink); margin-bottom: 5px; }
+
+/* ---------- Fondos de marca ---------- */
 
 .tech-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/asda.jpg');
+    background-image: linear-gradient(rgba(10, 23, 48, .38), rgba(10, 23, 48, .38)), url('../img/asda.jpg');
     background-size: cover;
     background-position: center;
 }
 
-/* Panel de vidrio (glassmorphism) de las estadísticas del hero */
-.hero-stats-panel {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+.patient-login-bg {
+    background-image: linear-gradient(rgba(10, 23, 48, .88), rgba(15, 32, 67, .82)), url('../img/analisis-de-laboratorio.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 991.98px) {
+    .lims-hero-copy { padding: 32px 20px 30px; }
+    .lims-hero-lead { max-width: none; }
 }
 
 /* ----- Estilos que ya no se usan ya que pasamos a bootstrap 5.3 y sus utilidades, pero los dejamos por pedido de la profe para el TP-----
