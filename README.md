@@ -19,6 +19,18 @@ Qué variables CSS armamos? Guardamos los colores y las fuentes en variables par
 
 Cómo hicimos el diseño responsivo? Usamos Media Queries (puntos de quiebre en 992px y 768px) para que la página se vea bien en cualquier dispositivo: En las tablets y compus chicas se acomodan los espacios. En los celulares (menos de 768px), el menú y el footer se ponen uno abajo del otro en columna, las tarjetas se apilan de a una para que no se rompa nada, y la barra de arriba deja de ser fija para aprovechar mejor la pantalla.
 
+## Login simulado — credenciales de prueba
+
+El proyecto no tiene backend, así que los dos logins están simulados con JavaScript: comparan lo que se escribe contra un usuario y contraseña fijos guardados en el propio código, y guardan la sesión en `sessionStorage` mientras la pestaña sigue abierta (el botón "Cerrar sesión" la borra).
+
+**Portal del paciente** (`pages/login-paciente.html`)
+- DNI: `30123456`
+- Contraseña: `Paciente2026`
+
+**Personal interno** (`pages/login-personal.html`)
+- Usuario: `bioq_perez`
+- Contraseña: `Lab2026!`
+
 ## Prácticas de SEO y Accesibilidad Implementadas
 
 Durante el desarrollo de esta interfaz, aplicamos diversas técnicas de optimización On-Page y accesibilidad para garantizar un buen posicionamiento en buscadores y una correcta experiencia de usuario:
