@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function iniciarSesion(usuario) {
         var fecha = new Date().toLocaleString('es-AR');
         sessionStorage.setItem(SESSION_KEY, JSON.stringify({ usuario: usuario, fecha: fecha }));
-        mostrarSesionActiva(usuario, fecha);
+        window.location.href = 'panel-control.html';
     }
 
     function mostrarSesionActiva(usuario, fecha) {
