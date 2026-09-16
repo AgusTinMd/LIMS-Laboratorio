@@ -59,13 +59,16 @@
                 <h1 class="h3 fw-bold text-dark mb-2">Ingrese a su cuenta</h1>
                 <p class="text-muted mb-4">Use su DNI y la contraseña que definió al registrarse.</p>
 
-                <form action="#" method="POST">
+                <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
+
+                <form id="loginPacienteForm" action="#" method="POST" novalidate>
                     <div class="mb-3">
                         <label for="dni" class="form-label fw-semibold small">DNI</label>
                         <div class="input-group">
                             <span class="input-group-text bg-white"><i class="fa-solid fa-id-card text-muted"></i></span>
                             <input type="text" class="form-control" id="dni" name="dni" placeholder="Ej: 30123456" required inputmode="numeric" pattern="[0-9]*" autocomplete="username">
                         </div>
+                        <div class="invalid-feedback">Ingrese un DNI válido.</div>
                     </div>
 
                     <div class="mb-3">
@@ -73,8 +76,11 @@
                         <div class="input-group">
                             <span class="input-group-text bg-white"><i class="fa-solid fa-lock text-muted"></i></span>
                             <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
-                            <span class="input-group-text bg-white"><i class="fa-regular fa-eye text-muted"></i></span>
+                            <button type="button" id="togglePassword" class="input-group-text bg-white" aria-label="Mostrar contraseña">
+                                <i class="fa-regular fa-eye text-muted"></i>
+                            </button>
                         </div>
+                        <div class="invalid-feedback">Ingrese su contraseña.</div>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center mb-4 small">
@@ -91,6 +97,17 @@
 
                     <p class="text-center text-muted small mb-0">¿Primera vez? <a href="#" class="text-primary fw-semibold text-decoration-none">Regístrese con su DNI</a></p>
                 </form>
+
+                <div id="loginSuccess" class="d-none text-center py-3">
+                    <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-success bg-opacity-10 text-success mb-3" style="width: 56px; height: 56px; font-size: 1.5rem;">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                    <h3 class="h5 fw-bold mb-1">Bienvenido/a, DNI <span id="dniActivo"></span></h3>
+                    <p class="text-muted small mb-4">Sesión iniciada el <span id="fechaAcceso"></span></p>
+                    <button type="button" id="cerrarSesionPaciente" class="btn btn-outline-primary w-100 py-2 fw-semibold">
+                        <i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar sesión
+                    </button>
+                </div>
             </div>
 
         </div>
@@ -126,5 +143,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/login-paciente.js"></script>
 </body>
 </html>
