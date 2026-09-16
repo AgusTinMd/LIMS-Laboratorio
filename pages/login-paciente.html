@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal de autogestión de pacientes para laboratorio bioquímico.">
+    <title>LIMS - Portal del Paciente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark lims-navbar sticky-top py-0">
+        <div class="container-fluid px-3 px-lg-4">
+            <a class="navbar-brand d-flex align-items-center gap-3 py-0" href="../index.html">
+                <img src="../img/logo1.png" alt="Logo LIMS Laboratorio Bioquímico" height="26" class="lims-logo-invert">
+                <span class="lims-eyebrow lims-chip-brand d-none d-md-inline-block">Laboratorio bioquímico</span>
+            </a>
+            <button class="navbar-toggler border-0 py-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav" aria-label="Menú principal">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 py-3 py-lg-0">
+                    <li class="nav-item"><a class="nav-link lims-nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link lims-nav-link" href="../index.html#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link lims-nav-link" href="../index.html#contacto">Contacto</a></li>
+                    <li class="nav-item ms-lg-3 ps-lg-3 lims-nav-divider mt-3 mt-lg-0">
+                        <a class="btn btn-sm lims-btn-ghost" href="login-personal.html">Personal interno</a>
+                    </li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-sm lims-btn-accent" aria-current="page" href="login-paciente.html"><i class="fa-solid fa-user me-2"></i>Portal del paciente</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-5 d-flex justify-content-center px-3">
+        <div class="row g-0 shadow-lg rounded-4 overflow-hidden w-100" style="max-width: 860px;">
+
+            <div class="col-md-5 patient-login-bg text-white p-4 p-md-5 d-flex flex-column">
+                <img src="../img/logo1.png" alt="LIMS" height="30" class="mb-auto align-self-start" style="filter: brightness(0) invert(1); width: auto;">
+                <h2 class="fw-bold mt-4 mb-3">Sus resultados, cuando los necesite</h2>
+                <p class="mb-4" style="color: rgba(255,255,255,.85);">Consulte informes validados, el estado de sus muestras y sus turnos desde un solo lugar.</p>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-success"></i><span class="small">Informes con firma electrónica</span></li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-success"></i><span class="small">Estado de la muestra en tiempo real</span></li>
+                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-success"></i><span class="small">Historial completo descargable</span></li>
+                </ul>
+            </div>
+
+            <div class="col-md-7 bg-white p-4 p-md-5 d-flex flex-column justify-content-center">
+                <span class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill mb-3 small fw-semibold text-uppercase align-self-start" style="background: #e8eef6; color: #1c4e80; letter-spacing: .05em;">
+                    <i class="fa-solid fa-user"></i>Portal del paciente
+                </span>
+                <h1 class="h3 fw-bold text-dark mb-2">Ingrese a su cuenta</h1>
+                <p class="text-muted mb-4">Use su DNI y la contraseña que definió al registrarse.</p>
+
+                <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
+
+                <form id="loginPacienteForm" action="#" method="POST" novalidate>
+                    <div class="mb-3">
+                        <label for="dni" class="form-label fw-semibold small">DNI</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fa-solid fa-id-card text-muted"></i></span>
+                            <input type="text" class="form-control" id="dni" name="dni" placeholder="Ej: 30123456" required inputmode="numeric" pattern="[0-9]*" autocomplete="username">
+                        </div>
+                        <div class="invalid-feedback">Ingrese un DNI válido.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label fw-semibold small">Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fa-solid fa-lock text-muted"></i></span>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                            <button type="button" id="togglePassword" class="input-group-text bg-white" aria-label="Mostrar contraseña">
+                                <i class="fa-regular fa-eye text-muted"></i>
+                            </button>
+                        </div>
+                        <div class="invalid-feedback">Ingrese su contraseña.</div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-4 small">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                            <label class="form-check-label text-muted" for="remember">Recordar mi DNI</label>
+                        </div>
+                        <a href="#" class="text-primary fw-semibold text-decoration-none">¿Olvidó su contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold mb-3">
+                        <i class="fa-solid fa-right-to-bracket me-2"></i>Ingresar
+                    </button>
+
+                    <p class="text-center text-muted small mb-0">¿Primera vez? <a href="#" class="text-primary fw-semibold text-decoration-none">Regístrese con su DNI</a></p>
+                </form>
+
+                <div id="loginSuccess" class="d-none text-center py-3">
+                    <span class="d-inline-flex align-items-center justify-content-center rounded-circle bg-success bg-opacity-10 text-success mb-3" style="width: 56px; height: 56px; font-size: 1.5rem;">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                    <h3 class="h5 fw-bold mb-1">Bienvenido/a, DNI <span id="dniActivo"></span></h3>
+                    <p class="text-muted small mb-4">Sesión iniciada el <span id="fechaAcceso"></span></p>
+                    <button type="button" id="cerrarSesionPaciente" class="btn btn-outline-primary w-100 py-2 fw-semibold">
+                        <i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar sesión
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="lims-footer pt-4 pb-3">
+        <div class="container-fluid px-3 px-lg-4">
+            <div class="row g-4 pb-4">
+                <div class="col-md-4">
+                    <h3 class="lims-eyebrow lims-text-accent mb-3">Laboratorio LIMS</h3>
+                    <p class="lims-footer-text mb-0">Comprometidos con la excelencia en diagnóstico clínico, innovación tecnológica y trazabilidad digital de muestras.</p>
+                </div>
+                <div class="col-md-4" id="contacto">
+                    <h3 class="lims-eyebrow lims-text-accent mb-3">Contacto y ubicación</h3>
+                    <p class="lims-footer-item"><i class="fa-solid fa-location-pin lims-text-accent me-2"></i>Av. Belgrano y Cuyo, Tucumán</p>
+                    <p class="lims-footer-item lims-mono"><i class="fa-solid fa-phone lims-text-accent me-2"></i>381-604-1779</p>
+                    <p class="lims-footer-item lims-mono mb-0"><i class="fa-solid fa-envelope lims-text-accent me-2"></i>contacto@limslaboratorio.com.ar</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="lims-eyebrow lims-text-accent mb-3">Síguenos</h3>
+                    <p class="lims-footer-text mb-3">Novedades y asesoramiento en nuestras redes oficiales.</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://whatsapp.com" target="_blank" rel="noopener" aria-label="WhatsApp" class="lims-social"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="lims-social"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="lims-social"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="lims-footer-bottom pt-3 text-center">
+                <p class="mb-0">&copy; 2026 — Proyecto Final Integrador LIMS · Bioquímica y Tecnología</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/login-paciente.js"></script>
+</body>
+</html>
