@@ -360,7 +360,7 @@ html::-webkit-scrollbar {
 /* ---------- Fondos de marca ---------- */
 
 .tech-bg {
-    background-image: linear-gradient(rgba(10, 23, 48, .38), rgba(10, 23, 48, .38)), url('../img/asda.jpg');
+    background-image: linear-gradient(rgba(10, 23, 48, .38), rgba(10, 23, 48, .38)), url('../img/trazabilidad-muestras.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -605,7 +605,7 @@ main {
 
 .banner-tecnologia {
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/asda.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/trazabilidad-muestras.jpg');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -943,7 +943,7 @@ html::-webkit-scrollbar {
 }
 
 .tech-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/asda.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/trazabilidad-muestras.jpg');
     background-size: cover;
     background-position: center;
 }
