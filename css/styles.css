@@ -375,7 +375,20 @@ html::-webkit-scrollbar {
 
 @media (max-width: 991.98px) {
     .lims-hero-copy { padding: 32px 20px 30px; }
-    .lims-hero-lead { max-width: none; }
+    .lims-hero-lead { max-width: none; font-size: 16px; }
+
+    /* Letra más grande en mobile/tablet: en pantallas chicas el tamaño
+       "denso" pensado para PC se lee difícil. Desktop queda como estaba. */
+    .lims-nav-link { font-size: 14.5px; }
+    .lims-body { font-size: 15px; }
+    .lims-card-text { font-size: 14px; }
+    .lims-rows li { font-size: 14px; }
+    .lims-access-title { font-size: 16px; }
+    .lims-access-sub { font-size: 13.5px; }
+    .lims-footer-text,
+    .lims-footer-item { font-size: 14px; }
+    .form-label { font-size: 13px; }
+    .form-control, .form-select { font-size: 1rem; }
 }
 
 /* ----- Estilos que ya no se usan ya que pasamos a bootstrap 5.3 y sus utilidades, pero los dejamos por pedido de la profe para el TP-----
